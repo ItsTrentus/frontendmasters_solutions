@@ -1,0 +1,71 @@
+
+<html lang="en">
+  <head>
+    <title>QR Challenege</title>
+  </head>
+  <body>
+    <div class="card">
+      <img src="/images/qr_challenge/image-qr-code.png" alt="">
+      <h2>Improve your front-end skills by building projects</h2>
+      <p>Scan the QR code to visit Frontend Mentor and take your coding skills to the next level</p>
+
+    </div>
+  </body>
+</html>
+
+
+<style lang="scss">
+  @import url('https://fonts.googleapis.com/css?family=Outfit');
+
+  body {
+    --white: hsl(0, 0%, 100%);
+    --light-gray: hsl(212, 45%, 89%);
+    --grayish-blue: hsl(220, 15%, 55%);
+    --dark-blue: hsl(218, 44%, 22%);
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    font-size: 62.5%;
+  }
+
+  .card {
+
+    font-size: 1.5rem;;
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    width: 100%;
+    max-width: 25rem;
+    margin: 0 auto;
+    font-family: Outfit, sans-serif;
+    text-align: center;
+    
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--dark-blue);
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--grayish-blue);
+      margin-bottom: 2rem;
+    }
+    
+    img {
+      width: 100%;
+      margin-bottom: 2rem;
+      border-radius: 0.5rem;;
+    }
+  }
+
+
+
+</style>
