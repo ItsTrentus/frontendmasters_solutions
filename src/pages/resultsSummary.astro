@@ -1,38 +1,66 @@
 <html lang="en">
-  <head>
-    <title>Results Summary</title>
-  </head>
-  <body>
-    <div class="card">
-        <div class="score">
-
-        </div>
-        <div class="summary">
-            <h2>Summary</h2>
-            <div class="summary--details">
-                <div class="summary--item">
-                    <div class="summary--type">
-                        <img src="images/results-summary/icon-reaction.svg" alt="">
-                        <p>Reaction</p>
-                    </div>
-                    <div class="summary-score">
-                        <span class="actual">
-                            80
-                        </span>
-                        <span class="total">
-                            /100
-                        </span>
+    <head>
+        <title>Results Summary</title>
+    </head>
+    <body>
+        <div class="card">
+            <section class="result">
+                <div class="result--circle">
+                    <h1 class="result--title">Your Result</h1>
+                    <div class="result--score">
+                        <h2>76</h2>
+                        <p>of 100</p>
                     </div>
                 </div>
-            </div>
+                <b>Great</b>
+                <p class="result--info">You scored higher than 65% of the people who have taken these tests.</p>
+            </section>
+            <section class="summary">
+                <h1 class="summary--title">Summary</h1>
+                <div class="summary--rows">
+                    <div class="summary--row reaction">
+                        <div class="badge">
+                            <img src="images/results-summary/icon-reaction.svg" alt="icon" />
+                            <b class="reaction--title">Reaction</b>
+                        </div>
+                        <p><b>80</b> / 100</p>
+                    </div>
+                    <div class="summary--row memory">
+                        <div class="badge">
+                            <img src="images/results-summary/icon-memory.svg" alt="icon" />
+                            <b class="memory--title">Memory</b>
+                        </div>
+                        <p><b>92</b> / 100</p>
+                    </div>
+                    <div class="summary--row verbal">
+                        <div class="badge">
+                            <img src="images/results-summary/icon-verbal.svg" alt="icon" />
+                            <b class="verbal--title">Verbal</b>
+                        </div>
+                        <p><b>61</b> / 100</p>
+                    </div>
+                    <div class="summary--row visual">
+                        <div class="badge">
+                            <img src="images/results-summary/icon-visual.svg" alt="icon" />
+                            <b class="visual--title">Visual</b>
+                        </div>
+                        <p><b>72</b> / 100</p>
+                    </div>
+                </div>
+                <button class="btn">Continue</button>
+            </section>
         </div>
-    </div>
-  </body>
+    </body>
 </html>
-
 
 <style lang="scss">
     @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
     html {
         --light-red: hsl(0, 100%, 67%);
@@ -48,7 +76,6 @@
         --light-lavender: hsl(241, 100%, 89%);
         --dark-gray-blue: hsl(224, 30%, 27%);
 
-        box-sizing: border-box;
         font-size: 62.5%;
         font-family: Hanken Grotesk, sans-serif;
         display: grid;
@@ -56,36 +83,160 @@
         height: 100vh;
     }
 
-    .card {
-        background-color: var(--white);
-        box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
-        width: 20rem;
-    }
+    .result {
+        background: linear-gradient(var(--light-slate-blue), var(--light-royal-blue));
+        border-radius: 0 0 2rem 2rem;
 
-    .summary {
-        display: flex;
-        flex-direction: column;
-
-        
-        &--item {
+        &--circle {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 2rem;
-            background-color: hsla(0, 100%, 67%, 0.3);
-            border-radius: 1.5rem;
+            flex-direction: column;
         }
-       
-        &--type {
+
+        &--title {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: var(--dark-gray-blue);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        &--score {
             display: flex;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
+            margin-bottom: 2rem;
+
+            h2 {
+                font-size: 10rem;
+                font-weight: 800;
+                color: var(--dark-gray-blue);
+                margin-right: 1rem;
+            }
+
             p {
-                color: var(--light-red)
+                font-size: 2.4rem;
+                font-weight: 500;
+                color: var(--dark-gray-blue);
             }
         }
 
-
+        &--info {
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: var(--dark-gray-blue);
+            text-align: center;
+        }
     }
 
+    .summary {
+        &--title {
+            font-size: 2.4rem;
+            font-weight: 800;
+            // color: var(--dark-gray-blue);
+            margin-bottom: 2rem;
+        }
 
+        &--rows {
+            display: flex;
+            flex-direction: column;
+            grid-gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        &--row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            border-radius: 1rem;
+            font-size: 1.6rem;
+            font-weight: 500;
+
+            &.reaction {
+                background: hsla(0, 100%, 67%, 0.1);
+            }
+
+            &.memory {
+                background: hsla(39, 100%, 56%, 0.1);
+            }
+
+            &.verbal {
+                background: hsla(166, 100%, 37%, 0.1);
+            }
+
+            &.visual {
+                background: hsla(234, 85%, 45%, 0.1);
+            }
+        }
+
+        .badge {
+            display: flex;
+            align-items: center;
+
+            img {
+                width: 2.4rem;
+                height: 2.4rem;
+                margin-right: 1rem;
+            }
+
+            b {
+                font-size: 1.6rem;
+                font-weight: 500;
+            }
+
+            &.first {
+                color: var(--light-red);
+            }
+
+            &.second {
+                color: var(--green-teal);
+            }
+
+            &.third {
+                color: var(--light-slate-blue);
+            }
+
+            &.forth {
+                color: var(--violet-blue);
+            }
+        }
+    }
+
+    .reaction {
+        &--title {
+            color: var(--light-red);
+        }
+    }
+
+    .memory {
+        &--title {
+            color: var(--orangey-yellow);
+        }
+    }
+
+    .verbal {
+        &--title {
+            color: var(--green-teal);
+        }
+    }
+
+    .visual {
+        &--title {
+            color: var(--violet-blue);
+        }
+    }
+
+    .btn {
+        display: block;
+        width: 100%;
+        padding: 2rem;
+        border: none;
+        border-radius: 5rem;
+        font-size: 1.6rem;
+        font-weight: 500;
+        color: var(--white);
+        background: var(--dark-gray-blue);
+        cursor: pointer;
+    }
 </style>
